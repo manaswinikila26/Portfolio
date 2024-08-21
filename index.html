@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/924e2eb5f2.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"
+      integrity="sha512-EZI2cBcGPnmR89wTgVnN3602Yyi7muWo8y1B3a8WmIv1J9tYG+udH4LvmYjLiGp37yHB7FfaPBo8ly178m9g4Q=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"> </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"
+      integrity="sha512-OzC82YiH3UmMMs6Ydd9f2i7mS+UFL5f977iIoJ6oy07AJT+ePds9QOEtqXztSH29Nzua59fYS36knmMcv79GOg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"> </script>
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <h1 class="logo">MN</h1 class="logo">
+                <ul id="sidemenu">
+                    <li></i><a href="#header"><i class="fa-solid fa-house fa-sm"></i>&nbsp;&nbsp;Home</a></li>
+                    <li></i><a href="#about"><i class="fa-solid fa-address-card fa-sm"></i>&nbsp;&nbsp;About</a></li>
+                    <li></i><a href="#skill-Page"><i class="fa-solid fa-bell-concierge fa-sm"></i>&nbsp;&nbsp;Skills</a></li>
+                    <li><a href="#portfolio"><i class="fa-solid fa-briefcase fa-sm"></i>&nbsp;&nbsp;Projects</a></li>
+                    <li><a href="#contact"><i class="fa-solid fa-address-book fa-sm"></i>&nbsp;&nbsp;Contact Us</a></li>
+                    <i class="fa-sharp fa-solid fa-xmark kp" onclick="closemenu()"> </i>
+                </ul>
+                <i class="fa-solid fa-bars kp" onclick="openmenu()"> </i>
+            </nav>
+
+            <div class="header-text">
+                <h1>Hi There!</h1>
+                <h1>I'm <b>MANASWI KOTHA</b> </h1>
+                <!-- <p>Web Developer</p> -->
+                <div class="show-hide-text">
+                    <div id="text" class="text"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------------------- About ------------------------------->
+    <div id="about">
+        <div class="conatiner">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="ma.jpg" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I am Manaswi Kotha, currently in my 3rd year pursuing a Bachelor's in Technology with a major in Computer 
+                        Science and Engineering at SRM University, Andhra Pradesh with a passion for web development, Artificial Intelligence, and software development. I thrive on exploring innovative technologies and applying my skills to solve real-world problems. My academic journey has equipped me with a solid foundation in computer science, and I am eager to contribute to exciting projects and further develop my expertise in these dynamic fields.
+
+                    </p>
+
+                    <div class="tab-titles">
+                        <div class="tab-links active-link" onclick="opentab('skills')">Education</div>
+                        <div class="tab-links" onclick="opentab('experience')">Experience</div>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>B. Tech</span><br>• SRM AP University<br>• GPA: 6.9/10</li>
+                            <li><span>Higher Secondary Certificate</span><br>• Sri Vidya Junior College<br>• 12th Grade percentage: 75.6</li>
+                            
+                        </ul>
+
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Front-End Developer</span><br> • SmartED <br> • 2024</li>
+                            <li><span>Front-End Developer</span><br> • Trio's Technologies <br> • 2024</li>
+                            
+                        </ul>
+
+                      </div>
+                  
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Skilld -->
+    <section id="skill-Page">
+
+        <div class="skillsContainer">
+          <div class="skillsHeading">
+            <h1 class="skillHeading">SKILLS</h1>
+  
+            <div class="skills" id="skill-Cards">
+              <div class="html skillCard">
+                <img class="skillImage" src="html.png" alt="" />
+                <h2>HTML</h2>
+              </div>
+              <div class="css skillCard">
+                <img class="skillImage" src="css.png" alt="" />
+                <h2>CSS</h2>
+              </div>
+              <div class="js skillCard">
+                <img class="skillImage" src="js.webp" alt="" />
+                <h2>JavaScript</h2>
+              </div>
+              <div class="react skillCard">
+                <img class="skillImage" src="react.svg" alt="" />
+                <h2>React Js</h2>
+              </div>
+              <!-- <div class="tailwind skillCard">
+                <img class="skillImage" src=" tailwind.png" alt="" />
+                <h2>Tailwind</h2>
+              </div> -->
+              <div class="bootstrap skillCard">
+                <img class="skillImage" src="bootsrap.png" alt="" />
+                <h2>Bootstrap</h2>
+              </div>
+              <div class="gsap skillCard">
+                <img class="skillImage" src="gsap.png" alt="" />
+                <h2>GSAP</h2>
+              </div>
+              <div class="cPlusPlus skillCard">
+                <img class="skillImage" src="C.png" alt="" />
+                <h2>C/C++</h2>
+              </div>
+              <!-- <div class="java skillCard">
+                <img class="skillImage" src=" java.png" alt="" />
+                <h2>Java</h2>
+              </div> -->
+              <div class="python skillCard">
+                <img class="skillImage" src="python.webp" alt="" />
+                <h2>Python</h2>
+              </div>
+              <div class="gitAndGitHub skillCard">
+                <img class="skillImage" src="git.png" alt="" />
+                <h2>Git&Github</h2>
+              </div>
+              <div class="mysql skillCard">
+                <img class="skillImage" src="sql.png" alt="" />
+                <h2>My SQL</h2>
+              </div>
+              <div class="jquery skillCard">
+                <img class="skillImage" src="jquery.png" alt="" />
+                <h2>JQuery</h2>
+              </div>
+              
+              
+              
+              <div class="jquery skillCard">
+                <img class="skillImage"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNyOe4xJhJFvDUbm1OSFnnEc4plFTvdYrBmOfNf-YUNA&s"
+                  alt="" />
+                <h2>MongoDB</h2>
+              </div>
+              
+              <div class="jquery skillCard">
+                <img class="skillImage" src="https://miro.medium.com/v2/resize:fit:800/1*bc9pmTiyKR0WNPka2w3e0Q.png"
+                  alt="" />
+                <h2>NodeJs</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </section>
+
+
+    <!-- -------------Portfolio---------------- -->
+    <div id="portfolio">
+        <div class="container">
+            <h1 class="sub-title">Projects</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img class="Social-img" src="tou.jpg" alt="">
+                    <div class="layer">
+                        <h3>Tourism Management</h3>
+                        <p>I designed Tourism Mangement system to streamline travel and tour operations. It allows users to view, book, and manage travel packages and accommodations. The system offers features such as package selection, booking management, and itinerary tracking, providing an efficient way to handle various aspects of tourism. It uses modern web technologies to ensure a user-friendly and interactive experience for both customers and operators.</p>
+                        <a href="https://github.com/manaswinikila26/Tourism-Managment-System" target="_blank"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img class="Social-img" src="hotels.jpg" alt="">
+                    <div class="layer">
+                        <h3>Hotem Management</h3>
+                        <p>I developed a single-file hotel management system that provides a simple interface for managing room bookings. Users can check in and check out by entering room numbers and guest names, with real-time updates displayed. The system uses HTML for structure, CSS for styling, and JavaScript for interactive functionalities. This solution is ideal for learning and basic use cases.</p>
+                        <a href="https://github.com/manaswinikila26/Hotel-Management" target="_blank"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img class="Social-img" src="P.jpeg" alt="">
+                    <div class="layer">
+                        <h3>Food order system</h3>
+                        <p>I created a simple food ordering system using HTML, CSS, and JavaScript. Users can add menu items like Pizza, Burger, and Pasta to their cart by clicking buttons. The system dynamically updates and displays the cart contents and the total price.</p>
+                        <a href="https://github.com/manaswinikila26/Food-order-system" target="_blank"><i class="fa-solid fa-link"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See More</a>
+        </div>
+    </div>
+
+    <!-- ---------------------contact ---------------------- -->
+     <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-envelope"></i>manaswikotha3112@gmail.com</p>
+                    <p><i class="fa-solid fa-phone"></i>9652348876</p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/manaswi_kotha/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="www.linkedin.com/in/venkata-manaswi-nikila-kotha-35a69b258" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://mail.google.com/mail/u/1/#inbox" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://github.com/manaswinikila26" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                    <a href="C:\Users\manas\Downloads\Manaswi_resume-2.pdf" download class="btn btn2">Download Resume</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your Name" required>
+                        <input type="email" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+        <div id="copy" class="copywrite">
+            <p>Copyright &copy; manaswi. Made with <i class="fa-solid fa-heart"></i> by Manaswi Kotha</p>
+        </div>
+     </div>
+
+
+    <script src="script.js"></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbynW6gpHsTy9PbBDujk2eivbf6rHh8_UkZZQ7WruHLaG--BFuvXvk9cPXjOkGM8ZQtc/exec'
+        const form = document.forms['submit-to-google-sheet']
+
+        const msg=document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML="Message sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML=""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+
+</html>

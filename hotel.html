@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .room {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .room.occupied {
+            background-color: #f9c2c2;
+        }
+
+        .room.available {
+            background-color: #c2f9c2;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        form div {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hotel Management System</h1>
+        <div id="rooms">
+            <!-- Rooms will be dynamically generated here -->
+        </div>
+        <form id="checkin-form">
+            <h2>Check In</h2>
+            <div>
+                <label for="checkin-room-number">Room Number:</label>
+                <input type="number" id="checkin-room-number" required>
+            </div>
+            <div>
+                <label for="guest-name">Guest Name:</label>
+                <input type="text" id="guest-name" required>
+            </div>
+            <button type="submit">Check In</button>
+        </form>
+        <form id="checkout-form">
+            <h2>Check Out</h2>
+            <div>
+                <label for="checkout-room-number">Room Number:</label>
+                <input type="number" id="checkout-room-number" required>
+            </div>
+            <button type="submit">Check Out</button>
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const rooms = {
+                1: null,
+                2: null,
+                3: null,
+                4: null,
+                5: null
+            };
+
+            const roomsContainer = document.getElementById('rooms');
+            const checkinForm = document.getElementById('checkin-form');
+            const checkoutForm = document.getElementById('checkout-form');
+
+            function renderRooms() {
+                roomsContainer.innerHTML = '';
+                for (const [roomNumber, guestName] of Object.entries(rooms)) {
+                    const roomDiv = document.createElement('div');
+                    roomDiv.classList.add('room');
+                    roomDiv.classList.add(guestName ? 'occupied' : 'available');
+                    roomDiv.innerHTML = `Room ${roomNumber}: ${guestName ? guestName : 'Available'}`;
+                    roomsContainer.appendChild(roomDiv);
+                }
+            }
+
+            checkinForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const roomNumber = document.getElementById('checkin-room-number').value;
+                const guestName = document.getElementById('guest-name').value;
+
+                if (rooms[roomNumber] === null) {
+                    rooms[roomNumber] = guestName;
+                } else {
+                    alert('Room is already occupied.');
+                }
+                renderRooms();
+            });
+
+            checkoutForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const roomNumber = document.getElementById('checkout-room-number').value;
+
+                if (rooms[roomNumber] !== null) {
+                    rooms[roomNumber] = null;
+                } else {
+                    alert('Room is already vacant.');
+                }
+                renderRooms();
+            });
+
+            renderRooms(); // Initial render
+        });
+    </script>
+</body>
+</html>
